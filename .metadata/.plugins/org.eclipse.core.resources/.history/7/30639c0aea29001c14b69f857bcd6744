@@ -1,0 +1,9 @@
+package com.jaddos.util;
+
+/**
+ * @author SonoD
+ *
+ */
+public class HelpUtils {
+
+}

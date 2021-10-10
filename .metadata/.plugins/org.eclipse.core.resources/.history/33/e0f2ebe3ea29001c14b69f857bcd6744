@@ -1,0 +1,12 @@
+package com.jaddos.util;
+
+/**
+ * @author SonoD
+ *
+ */
+public class HelpUtils {
+	
+	public static List<?> getHelpFunctions() {
+		return null;
+	}
+}
