@@ -37,4 +37,6 @@ public class JaDDoSConstant {
 	// Output status
 	public static final String DDOS_OUTPUT_STATUS_ERROR = "error";
 	public static final String DDOS_OUTPUT_STATUS_SUCCESS = "success";
+	
+	public static final int DEFAULT_TIMEOUT_IN_MILLISECONDS = 1000;
 }
