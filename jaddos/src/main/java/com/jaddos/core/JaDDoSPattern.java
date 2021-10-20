@@ -66,7 +66,7 @@ public class JaDDoSPattern implements Serializable {
 	private int socketTimeout;
 
 	/**
-	 * Get the procol name.
+	 * Get the protocol name.
 	 * 
 	 * @return the protocolname (e.g tcp, udp ...)
 	 */

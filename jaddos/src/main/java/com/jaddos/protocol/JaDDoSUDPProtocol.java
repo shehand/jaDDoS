@@ -33,7 +33,7 @@ public class JaDDoSUDPProtocol extends JaDDoS implements IJaDDoSUDPProtocol {
 
 		while (!Thread.currentThread().isInterrupted() && !socket.isClosed()) {
 			writeLineToSocket(getDdosPattern().getMessage());
-			logger.info("Attacked host " + getDdosPattern().getHost() + ":" + getDdosPattern().getPort());
+			logger.info("Attacking host " + getDdosPattern().getHost() + ":" + getDdosPattern().getPort());
 
 			try {
 				Thread.sleep(getDdosPattern().getTimeout());

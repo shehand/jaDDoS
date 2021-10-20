@@ -14,26 +14,28 @@ public class HelpUtils {
 
 	private HelpUtils() {
 		helpFunctions.add("EXAMPLES:");
-		helpFunctions.add(
-				"from terminal:  java -jar <path to jar file> host=TARGET port=PORT time=SECONDS packet=NUMBER bytes=NUMBER");
-		helpFunctions.add("PARAMETERS:");
-		helpFunctions.add("help		Print this help summary page");
-		helpFunctions.add("host		REQUIRED specify IP or HOSTNAME");
-		helpFunctions.add("pass		REQUIRED only if used from webserver");
-		helpFunctions.add("port		OPTIONAL if not specified a random ports will be selected");
-		helpFunctions.add("time		OPTIONAL seconds to keep the DDoS alive, required if packet is not used");
-		helpFunctions.add("packet	OPTIONAL number of packets to send to the target, required if time is not used");
-		helpFunctions
-				.add("bytes		OPTIONAL size of the packet to send, defualt: " + JaDDoSConstant.DDOS_DEFAULT_PACKET_SIZE);
-		helpFunctions.add("format	OPTIONAL output format, (text,json,xml), default: text");
-		helpFunctions.add("output	OPTIONAL logfile, save the output to file");
-		helpFunctions.add("verbose	OPTIONAL 0: debug, 1:info, 2:notice, 3:warning, 4:error, default: info");
+		helpFunctions.add("from terminal:  java -jar <path to jar file> --host example.com --port 8080 --protocol UDP");
 		helpFunctions.add("");
-		helpFunctions.add("Note: 	If both time and packet are specified, only time will be used");
+		helpFunctions.add("PARAMETERS:");
+		helpFunctions.add("--help					Print this help summary page");
+		helpFunctions.add("--host / -h				REQUIRED specify IP or HOSTNAME");
+		helpFunctions.add(
+				"--protocol / -pc			REQUIRED specify the DoS format. Only support for TCP or UDP for the moment.");
+		helpFunctions.add(
+				"--port / -p				OPTIONAL should be an opened port that can create a socket listen to it. If not provided program will use a sequence of threads to identify opened ports in the given host. This may required some additional time since this is an I/O related task.");
+		helpFunctions.add(
+				"--threads / -t			OPTIONAL number of threads that should concurrenlty send packets to the defined host. larger the number, larger the affect");
+		helpFunctions
+				.add("--message / -m			OPTIONAL a message string that should send with the request packet");
+		helpFunctions.add("--timeout / -tm			OPTIONAL timeout between two threads");
+		helpFunctions.add("--sockettimeout / -scm	OPTIONAL timeout for socket to send requests");
+		helpFunctions.add(
+				"--duration / -d			OPTIONAL a time duration that attack should happened. Time should be given in HH:MM:SS format seperating each with colon element. All three segments should present in the given parameter.");
+		helpFunctions.add("");
 	}
 
 	public void printUsageFunctions() {
-		for(String s: helpFunctions) {
+		for (String s : helpFunctions) {
 			System.out.println(s);
 		}
 	}
